@@ -9,7 +9,10 @@ module.exports = ({ env }) => ({
       },
       actionOptions: {
         upload: {},
-        uploadStream: { folder: env("CLOUDINARY_FOLDER") },
+        uploadStream: {
+          folder: env("CLOUDINARY_FOLDER"),
+          timeout: 1000 * 60 * 3,
+        },
         delete: {},
       },
     },
